@@ -1,0 +1,12 @@
+<h1>Welcome to Airbnb</h1>
+<% @flats.each do |flat| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= flat.name %></h5>
+    <p class="card-text"><%= flat.description %></p>
+    <p class="card-text"><%= flat.number_of_guests %></p>
+    <p class="card-text"><%= flat.price_per_night %></p>
+    <%= link_to "More info", flat_path(flat.id)%>
+  </div>
+</div>
+  <% end %>
