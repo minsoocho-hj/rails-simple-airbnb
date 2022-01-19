@@ -1,0 +1,64 @@
+<div class="container mt-3">
+
+  <div class="row">
+
+    <div class="col-8">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1><%= @flat.name %></h1>
+            <p class="lead"><%= @flat.address %></p>
+        </div>
+      </div>
+
+      <div class="jumbotron">
+        <p class="lead">A bit more about this flat...</p>
+        <hr class="my-4">
+        <p><%= @flat.description %></p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="jumbotron">
+        <p class="lead">Book this place!</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">From :</span>
+          </div>
+          <input type="text" class="form-control" placeholder="19/01/21" aria-label="From" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">To :</span>
+          </div>
+          <input type="text" class="form-control" placeholder="20/01/21" aria-label="To" aria-describedby="basic-addon1">
+        </div>
+        <p class="lead">
+          <a class="btn btn-success btn-lg btn-block" href="#" role="button">Book</a>
+        </p>
+      </div>
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Details</h1>
+            <div class="d-flex">
+              <p class="card-text mr-3"><i class="fas fa-user-friends"></i><%= @flat.number_of_guests %></p>
+              <p class="card-text"><i class="fas fa-euro-sign"></i><%= @flat.price_per_night %></p>
+            </div>
+        </div>
+      </div>
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>Share</h3>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

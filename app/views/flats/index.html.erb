@@ -1,12 +1,28 @@
-<h1>Welcome to Airbnb</h1>
-<% @flats.each do |flat| %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= flat.name %></h5>
-    <p class="card-text"><%= flat.description %></p>
-    <p class="card-text"><%= flat.number_of_guests %></p>
-    <p class="card-text"><%= flat.price_per_night %></p>
-    <%= link_to "More info", flat_path(flat.id)%>
+<div class="container">
+
+  <div class="row">
+    <div class="col-12 m-3">
+        <h1>All our Flats</h1>
+        <p>All <%= @flats.length %> flats. </p>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-12 d-flex flex-wrap">
+      <% @flats.each do |flat| %>
+        <div class="col-3 card p-2 m-3" style="width: 20rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+            <p class="card-text"><i class="fas fa-user-friends"></i><%= flat.number_of_guests %></p>
+            <p class="card-text"><i class="fas fa-euro-sign"></i><%= flat.price_per_night %></p>
+            <%= link_to "More info", flat_path(flat.id)%>
+            <%= link_to "Edit", edit_flat_path(flat.id)%>
+            <%= link_to "Remove", flat_path(flat.id), method: :delete, data: { confirm: "Are you sure?" }%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
-  <% end %>
