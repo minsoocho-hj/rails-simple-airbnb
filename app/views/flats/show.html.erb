@@ -1,7 +1,6 @@
-<div class="container mt-3">
-
+<div class="container">
+<img src="<%= @flat.image %>" alt="backgroung image">
   <div class="row">
-
     <div class="col-8">
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -44,8 +43,8 @@
         <div class="container">
             <h1>Details</h1>
             <div class="d-flex">
-              <p class="card-text mr-3"><i class="fas fa-user-friends"></i><%= @flat.number_of_guests %></p>
-              <p class="card-text"><i class="fas fa-euro-sign"></i><%= @flat.price_per_night %></p>
+              <p class="card-text mr-3"><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %></p>
+              <p class="card-text"><i class="fas fa-euro-sign"></i> <%= @flat.price_per_night %></p>
             </div>
         </div>
       </div>
