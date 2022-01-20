@@ -1,8 +1,23 @@
 class FlatsController < ApplicationController
   before_action :find_flat, only: [:show, :edit, :update, :destroy]
 
+  # def index
+  #   @flats = Flat.all
+  #   @search = params[:search]
+
+  #   if @search.present?
+  #     @keyword = @search[:keyword]
+  #     @flats = Flat.where(name: @keyword)
+  #   end
+  # end
+
   def index
     @flats = Flat.all
+    @search = params["search"]
+    if @search.present?
+      @keyword = @search["keyword"]
+      @flats = Flat.where("name LIKE '%#{@keyword}%'")
+    end
   end
 
   def new
@@ -32,11 +47,6 @@ class FlatsController < ApplicationController
     @flat.destroy
     redirect_to flats_path
   end
-
-  # def search
-  #   @flats = Flat.where("name LIKE '%#{}%'")
-  #   redirect_to search_flats(@flat)
-  # end
 
   private
 
