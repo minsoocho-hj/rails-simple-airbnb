@@ -19,7 +19,7 @@
     <div class="p-2">
 
       <%= simple_form_for :search, url: flats_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :keyword, input_html: {value: "Search yourgit flat!"} %>
+        <%= f.input :keyword, input_html: {value: "" } %>
         <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
 
